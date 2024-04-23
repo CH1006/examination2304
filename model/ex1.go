@@ -1,7 +1,6 @@
-package main
+package model
 
 import (
-	"log"
 	"sort"
 
 	"github.com/samber/lo"
@@ -46,10 +45,4 @@ func lightCases(validLightBrightness []int, expectedBrightness int, lights []int
 		currentLights := append(lights, lightKindValue)
 		lightCases(validLightBrightness[idx:], expectedBrightness-lightKindValue, currentLights, res)
 	}
-}
-
-func main() {
-	log.Println(GetLightList([]int{200, 300, 500}, 800))
-	log.Println(GetLightList([]int{200, 300, 600, 700}, 800))
-	log.Println(GetLightList([]int{200}, 100))
 }
